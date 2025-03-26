@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מרזליאקוב שירותי הנדסה / Мерзляков</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #f8f9fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1.5s ease-in-out;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+      padding: 0 1rem;
+    }
+    .hero .content > div {
+      flex: 1;
+    }
+    .hero h1 {
+      font-size: 2.2rem; /* Уменьшенный шрифт */
+      color: #ffd700;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1rem; /* Уменьшенный шрифт */
+      color: #f1f1f1;
+    }
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+      animation: slideUp 1s ease-in-out;
+      flex: 1;
+    }
+    h2 {
+      color: #1e3a8a;
+      font-size: 1.6rem; /* Уменьшенный шрифт */
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    p, li {
+      font-size: 0.9rem; /* Уменьшенный шрифт */
+    }
+    .contact-form a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-form a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem; /* Уменьшенный шрифт */
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    /* Направление текста */
+    .hebrew {
+      direction: rtl;
+      text-align: right;
+    }
+    .russian {
+      direction: ltr;
+      text-align: left;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      .hero .content { flex-direction: column; gap: 1rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 0.9rem; }
+      section { padding: 1.5rem; flex-direction: column; }
+      h2 { font-size: 1.4rem; }
+      p, li { font-size: 0.8rem; }
+      footer { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="content">
+      <div class="hebrew">
+        <h1>מרזליאקוב שירותי הנדסה</h1>
+        <p>חישוב מדויק של חומרי בנייה לפרויקטים הנדסיים</p>
+      </div>
+      <div class="russian">
+        <h1>Мерзляков - услуги инженерных расчетов</h1>
+        <p>Точный расчёт строительных материалов для инженерных проектов</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="hebrew">
+      <div class="section">
+        <h2>על החברה</h2>
+        <p>אנו מתמחים בחישוב כמויות מדויק של חומרי בנייה לפרויקטים מגוונים — כולל קבלנים, חברות ניהול, ומשרדי תכנון. החישוב מבוסס על שיטות הנדסיות מתקדמות ומבוצע במהירות ובדיוק גבוה.</p>
+      </div>
+      <div id="contact" class="section contact-form">
+        <h2>צור קשר</h2>
+        <p>טל: 050-6459648 סרגיי</p>
+        <p>דוא"ל: <a href="mailto:almax20011@gmail.com">almax20011@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="russian">
+      <div class="section">
+        <h2>О компании</h2>
+        <p>Мы специализируемся на услугах инженерных расчетов для различных проектов — для подрядчиков, проектных бюро и управляющих компаний. Используем современные инженерные методики для точного и оперативного результата.</p>
+      </div>
+      <div id="contact" class="section contact-form">
+        <h2>Связаться с нами</h2>
+        <p>Телефон: 050-6459648 (Сергей)</p>
+        <p>Email: <a href="mailto:almax20011@gmail.com">almax20011@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="hebrew">© 2025 מרזליאקוב שירותי הנדסה. כל הזכויות שמורות</span>
+    <span class="russian">© 2025 Мерзляков. Все права защищены</span>
+  </footer>
+</body>
+</html>
