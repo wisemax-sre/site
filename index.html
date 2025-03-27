@@ -15,7 +15,7 @@
     }
     .hero {
       position: relative;
-      height: 60vh;
+      height: 70vh; /* Увеличил высоту для логотипа */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -36,24 +36,52 @@
       z-index: 1;
       animation: fadeIn 1.5s ease-in-out;
       display: flex;
-      justify-content: center;
-      gap: 2rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
     }
-    .hero .content > div {
+    .hero .logo {
+      width: 150px; /* Размер логотипа */
+      height: auto;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Тень для глубины */
+    }
+    .hero .titles {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+    }
+    .hero .titles > div {
       flex: 1;
     }
     .hero h1 {
-      font-size: 2.2rem; /* Уменьшенный шрифт */
+      font-size: 2.2rem;
       color: #ffd700;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
       margin-bottom: 0.5rem;
     }
     .hero p {
-      font-size: 1rem; /* Уменьшенный шрифт */
+      font-size: 1rem;
       color: #f1f1f1;
+    }
+    .hero .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: #60a5fa;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .hero .cta-button:hover {
+      background: #3b82f6;
     }
     section {
       max-width: 1000px;
@@ -72,12 +100,28 @@
     }
     h2 {
       color: #1e3a8a;
-      font-size: 1.6rem; /* Уменьшенный шрифт */
+      font-size: 1.6rem;
       margin-bottom: 1rem;
       font-weight: 500;
     }
-    p, li {
-      font-size: 0.9rem; /* Уменьшенный шрифт */
+    p {
+      font-size: 0.9rem;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .feature {
+      flex: 1 1 30%;
+      text-align: center;
+      padding: 1rem;
+    }
+    .feature i {
+      font-size: 2rem;
+      color: #60a5fa;
+      margin-bottom: 0.5rem;
     }
     .contact-form a {
       color: #60a5fa;
@@ -92,7 +136,7 @@
       color: white;
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.8rem; /* Уменьшенный шрифт */
+      font-size: 0.8rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -115,49 +159,105 @@
       to { transform: translateY(0); opacity: 1; }
     }
     @media (max-width: 768px) {
-      .hero .content { flex-direction: column; gap: 1rem; }
+      .hero { height: 80vh; } /* Для мобильных */
+      .hero .content { gap: 0.5rem; }
+      .hero .logo { width: 120px; }
+      .hero .titles { flex-direction: column; gap: 1rem; }
       .hero h1 { font-size: 1.8rem; }
       .hero p { font-size: 0.9rem; }
       section { padding: 1.5rem; flex-direction: column; }
       h2 { font-size: 1.4rem; }
-      p, li { font-size: 0.8rem; }
+      p { font-size: 0.8rem; }
       footer { flex-direction: column; gap: 0.5rem; }
+      .features { flex-direction: column; }
+      .feature { flex: 1 1 100%; }
     }
   </style>
 </head>
 <body>
   <header class="hero">
     <div class="content">
-      <div class="hebrew">
-        <h1>מרזליאקוב שירותי הנדסה</h1>
-        <p>חישוב מדויק של חומרי בנייה לפרויקטים הנדסיים</p>
+      <img src="logo.png" alt="Sylvia Logo" class="logo">
+      <div class="titles">
+        <div class="hebrew">
+          <h1>סילביה - דירות יוקרה בבנסקו</h1>
+          <p>מקום מושלם לחופשה ולהשקעה</p>
+        </div>
+        <div class="russian">
+          <h1>Сильвия - роскошные квартиры в Банско</h1>
+          <p>Идеальное место для отдыха и инвестиций</p>
+        </div>
       </div>
-      <div class="russian">
-        <h1>Мерзляков - услуги инженерных расчетов</h1>
-        <p>Точный расчёт строительных материалов для инженерных проектов</p>
-      </div>
+      <a href="#contact" class="cta-button">Связаться с нами / צור קשר</a>
     </div>
   </header>
 
   <section>
     <div class="hebrew">
       <div class="section">
-        <h2>על החברה</h2>
-        <p>אנו מתמחים בחישוב כמויות מדויק של חומרי בנייה לפרויקטים מגוונים — כולל קבלנים, חברות ניהול, ומשרדי תכנון. החישוב מבוסס על שיטות הנדסיות מתקדמות ומבוצע במהירות ובדיוק גבוה.</p>
+        <h2>על הקומפלקס</h2>
+        <p>קומפלקס סילביה ממוקם בלב אתר הסקי בבנסקו, ומציע דירות יוקרה עם נוף פנורמי להרים. הדירות מעוצבות בסגנון מודרני ומצוידות בכל מה שצריך לחופשה מושלמת. הקרבה למסלולי הסקי הופכת את סילביה לבחירה המושלמת עבור חובבי ספורט חורף ומשקיעים.</p>
       </div>
-      <div id="contact" class="section contact-form">
+    </div>
+    <div class="russian">
+      <div class="section">
+        <h2>О комплексе</h2>
+        <p>Комплекс Сильвия расположен в сердце горнолыжного курорта Банско и предлагает роскошные квартиры с панорамным видом на горы. Квартиры оформлены в современном стиле и оснащены всем необходимым для идеального отдыха. Близость к лыжным трассам делает Сильвия отличным выбором для любителей зимнего спорта и инвесторов.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="hebrew">
+      <div class="section">
+        <h2>יתרונות</h2>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-skiing"></i>
+            <p>קרבה למסלולי סקי</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-mountain"></i>
+            <p>נוף פנורמי להרים</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-home"></i>
+            <p>עיצוב מודרני</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="russian">
+      <div class="section">
+        <h2>Преимущества</h2>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-skiing"></i>
+            <p>Близость к лыжным трассам</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-mountain"></i>
+            <p>Панорамный вид на горы</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-home"></i>
+            <p>Современный дизайн</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="hebrew">
+      <div class="section contact-form">
         <h2>צור קשר</h2>
         <p>טל: 050-6459648 סרגיי</p>
         <p>דוא"ל: <a href="mailto:almax20011@gmail.com">almax20011@gmail.com</a></p>
       </div>
     </div>
-
     <div class="russian">
-      <div class="section">
-        <h2>О компании</h2>
-        <p>Мы специализируемся на услугах инженерных расчетов для различных проектов — для подрядчиков, проектных бюро и управляющих компаний. Используем современные инженерные методики для точного и оперативного результата.</p>
-      </div>
-      <div id="contact" class="section contact-form">
+      <div class="section contact-form">
         <h2>Связаться с нами</h2>
         <p>Телефон: 050-6459648 (Сергей)</p>
         <p>Email: <a href="mailto:almax20011@gmail.com">almax20011@gmail.com</a></p>
